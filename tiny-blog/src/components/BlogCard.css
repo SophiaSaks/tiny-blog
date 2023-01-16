@@ -1,0 +1,10 @@
+.BlogCard__post {
+    margin: 2rem;
+    padding: 1rem;
+    list-style: none;
+    border: 0.2rem solid black;
+}
+
+.BlogCard__card {
+    display: none;
+}
