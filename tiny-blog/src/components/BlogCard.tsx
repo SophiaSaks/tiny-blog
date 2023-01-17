@@ -18,7 +18,6 @@ function BlogCard(props: Props) {
 
   return (
     <div className="BlogCard">
-      <h3>The Tiny Blog</h3>
       {
         props.blogPosts.map(post => <li className="BlogCard__post" key={post.id} onClick={detailsHandler}>{post.title}<div className='BlogCard__card'><p>{post.body}</p></div></li>)
       }

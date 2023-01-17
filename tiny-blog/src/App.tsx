@@ -5,6 +5,7 @@ import './App.css';
 import BlogCard from './components/BlogCard';
 import Blog from './types';
 import fakePosts from './mockData';
+import Navbar from './components/Navbar';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <BlogCard blogPosts={posts} /> 
     </div>
   );
