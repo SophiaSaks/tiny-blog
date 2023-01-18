@@ -8,7 +8,7 @@
 }
 
 .BlogCards__div {
-    border: 0.2rem dotted #91a98b46;
+    border: 0.2rem dotted #5c292137;
     text-align: center;
     margin: 0.2rem;
 }
@@ -33,11 +33,26 @@
     font-size: 1rem;
     font-family: 'Cabin', sans-serif;
     color: #07080A;
+    margin-top: 0.5rem;
 }
 
 
 .--visible {
     height: auto;
-   
-    /* display: block; */
+}
+
+
+.BlogCards__tagSection {
+    display: flex;
+    flex-direction: row;
+    color: #91A98B;
+    margin-top: 6rem;
+}
+
+.BlogCards__tagSection > h4 {
+    background-color: #07080A;
+    border-radius: 2rem;
+    padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+    margin-right: 0.5rem;
+    
 }

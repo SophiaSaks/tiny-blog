@@ -1,31 +1,30 @@
-import { useState } from 'react';
 import './App.css';
-// import axios from 'axios';
-// import { useState, useEffect } from 'react'; 
+import axios from 'axios';
+import { useState, useEffect } from 'react'; 
 import BlogCards from './components/BlogCards';
 import Blog from './types';
-import fakePosts from './mockData';
+// import fakePosts from './mockData';
 import Navbar from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
 
-  const [posts, setPosts] = useState<Blog[]>(fakePosts);
+  // const [posts, setPosts] = useState<Blog[]>(fakePosts);
+  const [posts, setPosts] = useState<Blog[]>([]);
 
-  // const getBlogPost = () => {
-  //   axios.get('https://dummyjson.com/posts')
-  //   .then(res => {
-  //     console.log(res.data)
-  //     setBlogPost(res.data);
-  // })
-  // .catch(err => {
-  //     console.log(err)
-  // })
-  // }
+  const getBlogPost = () => {
+    axios.get('https://dummyjson.com/posts')
+    .then(res => {
+      setPosts(res.data.posts);
+  })
+  .catch(err => {
+      console.log(err)
+  })
+  }
 
-  // useEffect(() => {
-  //   getBlogPost();
-  // }, []);
+  useEffect(() => {
+    getBlogPost();
+  }, []);
 
   return (
     <Routes>
@@ -63,10 +62,5 @@ function App() {
     
   );
 }
-
-{/* <div className="App">
-    <Navbar />
-    <BlogCards blogPosts={posts} /> 
-</div> */}
 
 export default App;

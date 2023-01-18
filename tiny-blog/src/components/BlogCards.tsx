@@ -1,6 +1,6 @@
 import './BlogCards.css';
 import Blog from '../types'; 
-import { MouseEvent, useState } from 'react';
+import { MouseEvent } from 'react';
 
 type Props = {
     blogPosts: Blog[] 
@@ -26,6 +26,11 @@ function BlogCards(props: Props) {
                 <li className="BlogCards__post" onClick={detailsHandler}>{post.title}
                   <div className='BlogCards__card'>
                     <p>{post.body}</p>
+                      <div className='BlogCards__tagSection'>
+                        {
+                        post.tags.map((tag:string) => <h4>#{tag}</h4>)
+                        }
+                      </div>
                   </div>
                 </li>
             </div>

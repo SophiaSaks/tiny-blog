@@ -1,5 +1,4 @@
 import './Navbar.css';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { MouseEvent } from 'react';
 
@@ -10,6 +9,9 @@ function Navbar() {
     const handler = (e: MouseEvent<HTMLDivElement>) => {
         e.preventDefault();
         const tag = e.target as HTMLElement;
+        if (tag.className === 'Navbar__tags') {
+            return;
+        }
         navigate(`/${tag.innerHTML}`);
     }
 
@@ -25,15 +27,5 @@ function Navbar() {
     </nav>
   );
 }
-
-{/* <nav className='Navbar'>
-        <h1 className='Navbar__title'>Sophias Blog</h1>
-        <div className='Navbar__tags'>
-            <HashLink to='/' className='Navbar__all'>All</HashLink>
-            <HashLink to={`/#sophiasid`} className='Navbar__crime'>Crime</HashLink>
-            <HashLink to='' className='Navbar__magical'>Magical</HashLink>
-            <HashLink to='' className='Navbar__mystery'>Mystery</HashLink>
-        </div>
-    </nav> */}
 
 export default Navbar;
